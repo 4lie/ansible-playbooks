@@ -1,0 +1,11 @@
+# /etc/hosts Configuration
+hosts_add_default_ipv4: true
+hosts_entries: []
+
+# NTP Client
+ntp_manage_config: true
+ntp_timezone: Asia/Tehran
+ntp_servers:
+  - 2.ir.pool.ntp.org
+  - 1.asia.pool.ntp.org
+  - 0.asia.pool.ntp.org

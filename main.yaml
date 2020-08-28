@@ -1,0 +1,47 @@
+- name: Change The Hostname
+  hosts: all
+  become: true
+  tasks:
+    - hostname:
+        name: "{{ inventory_hostname }}"
+      when: ansible_fqdn != ansible_ssh_host
+      tags: ["hostname"]
+
+- name: Commons Configurations
+  hosts: all
+  become: true
+  roles:
+    - role: commons
+      tags: ["commons", 'all']
+
+    - role: ansible-history
+      tags: ["ansible-history", 'all']
+
+    - role: etchosts
+      tags: ["hosts", 'all']
+
+    - role: geerlingguy.ntp
+      tags: ["ntp-role", 'all']
+
+- name: Configuring Prometheus
+  hosts: prometheus
+  become: true
+  roles:
+    - role: prometheus
+      tags: ["prometheus"]
+
+- name: Configuring Prometheus Node Exporter
+  hosts: prometheus-node-exporter
+  become: true
+  roles:
+    - role: softasap.sa-prometheus-exporters
+      vars:
+        - prometheus_exporters: "{{ box_prometheus_exporters }}"
+      tags: ['prometheus-node-exporter']
+
+- name: Configuring Grafana
+  hosts: grafana
+  become: true
+  roles:
+    - role: grafana
+      tags: ["grafana"]

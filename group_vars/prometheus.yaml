@@ -1,0 +1,4 @@
+prometheus_storage_retention: "30d"
+prometheus_targets:
+  node:
+    - targets: []

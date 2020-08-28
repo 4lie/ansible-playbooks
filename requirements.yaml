@@ -1,0 +1,34 @@
+- src: git@github.com:4lie/ansible-role-commons.git
+  scm: git
+  version: master
+  name: commons
+
+- src: git@github.com:geerlingguy/ansible-role-ntp.git
+  scm: git
+  version: master
+  name: geerlingguy.ntp
+
+- src: git@github.com:Weihrauch/ansible-history.git
+  scm: git
+  version: master
+  name: ansible-history
+
+- src: git@github.com:bertvv/ansible-role-hosts.git
+  scm: git
+  version: master
+  name: etchosts
+
+- src: git@github.com:cloudalchemy/ansible-prometheus.git
+  scm: git
+  version: master
+  name: prometheus
+
+- src: git@github.com:softasap/sa-prometheus-exporters.git
+  scm: git
+  version: master
+  name: softasap.sa-prometheus-exporters
+
+- src: git@github.com:cloudalchemy/ansible-grafana.git
+  scm: git
+  version: master
+  name: grafana
