@@ -1,10 +1,72 @@
 all:
   children:
+    nats:
+      children:
+        dc-1:
+          hosts:
+            nats-01:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+            nats-02:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+            nats-03:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+          vars:
+            nats_host_group: "dc-1"
+
+        dc-2:
+          hosts:
+            nats-01:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+            nats-02:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+            nats-03:
+              # fixme: change these address
+              ansible_host: 192.168.56.101
+              nats_client_advertise: 192.168.56.101
+              nats_cluster_routes_address: 192.168.56.101
+          vars:
+            nats_host_group: "dc-2"
+
+    streaming:
+      hosts:
+        nats-streaming-01:
+          # fixme: change this address
+          ansible_host: 192.168.56.101
+        nats-streaming-02:
+          # fixme: change this address
+          ansible_host: 192.168.56.101
+        nats-streaming-03:
+          # fixme: change this address
+          ansible_host: 192.168.56.101
+        nats-streaming-04:
+          # fixme: change this address
+          ansible_host: 192.168.56.101
+        nats-streaming-05:
+          # fixme: change this address
+          ansible_host: 192.168.56.101
+
     prometheus:
       hosts:
-        ubuntu-ir-01:
+        prometheus-01:
+          # fixme: change this address
           ansible_host: 192.168.56.101
     grafana:
       hosts:
-        ubuntu-ir-01:
+        grafana-01:
+          # fixme: change this address
           ansible_host: 192.168.56.101

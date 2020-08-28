@@ -17,11 +17,16 @@
     - role: ansible-history
       tags: ["ansible-history", 'all']
 
-    - role: etchosts
+    - role: bertvv.hosts
       tags: ["hosts", 'all']
 
     - role: geerlingguy.ntp
-      tags: ["ntp-role", 'all']
+      tags: ["ntp", 'all']
+
+    - role: softasap.sa-prometheus-exporters
+      vars:
+        - prometheus_exporters: "{{ box_prometheus_exporters }}"
+      tags: ['prometheus-node-exporter', 'all']
 
 - name: Configuring Prometheus
   hosts: prometheus
@@ -30,18 +35,19 @@
     - role: prometheus
       tags: ["prometheus"]
 
-- name: Configuring Prometheus Node Exporter
-  hosts: prometheus-node-exporter
-  become: true
-  roles:
-    - role: softasap.sa-prometheus-exporters
-      vars:
-        - prometheus_exporters: "{{ box_prometheus_exporters }}"
-      tags: ['prometheus-node-exporter']
-
 - name: Configuring Grafana
   hosts: grafana
   become: true
   roles:
     - role: grafana
       tags: ["grafana"]
+
+- hosts: nats
+  roles:
+    - role: nats
+      tags: ['nats']
+
+- hosts: streaming
+  roles:
+    - role: nats-streaming
+      tags: ['nats-streaming']

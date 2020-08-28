@@ -1,11 +1,11 @@
 - src: git@github.com:4lie/ansible-role-commons.git
   scm: git
-  version: master
+  version: v1.0.0
   name: commons
 
 - src: git@github.com:geerlingguy/ansible-role-ntp.git
   scm: git
-  version: master
+  version: 2.1.0
   name: geerlingguy.ntp
 
 - src: git@github.com:Weihrauch/ansible-history.git
@@ -15,20 +15,30 @@
 
 - src: git@github.com:bertvv/ansible-role-hosts.git
   scm: git
-  version: master
-  name: etchosts
+  version: v1.2.0
+  name: bertvv.hosts
 
 - src: git@github.com:cloudalchemy/ansible-prometheus.git
   scm: git
-  version: master
+  version: 2.15.5
   name: prometheus
 
 - src: git@github.com:softasap/sa-prometheus-exporters.git
   scm: git
-  version: master
+  version: 3.8.0
   name: softasap.sa-prometheus-exporters
 
 - src: git@github.com:cloudalchemy/ansible-grafana.git
   scm: git
-  version: master
+  version: 0.17.0
   name: grafana
+
+- src: git@github.com:GROG/ansible-role-user.git
+  scm: git
+  version: v1.3.0
+  name: GROG.user
+
+- src: git@github.com:GROG/ansible-role-authorized-key.git
+  scm: git
+  version: v1.1.5
+  name: GROG.authorized-key
