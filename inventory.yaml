@@ -1,7 +1,9 @@
 all:
   children:
+
     nats:
       children:
+
         dc-1:
           hosts:
             nats-01:
@@ -53,6 +55,7 @@ all:
       hosts:
         prometheus-01:
           ansible_host: 192.168.56.107
+
     grafana:
       hosts:
         grafana-01:
