@@ -42,12 +42,19 @@
     - role: grafana
       tags: ["grafana"]
 
-- hosts: nats
+- name: Configuring NATS Servers
+  hosts: nats
+  become: true
   roles:
     - role: nats
       tags: ['nats']
 
-- hosts: streaming
+- name: Configuring NATS Streaming Servers
+  hosts: streaming
+  become: true
   roles:
     - role: nats-streaming
       tags: ['nats-streaming']
+
+    - role: prometheus-nats-exporter
+      tags: ['nats-streaming', 'prometheus-nats-exporter']

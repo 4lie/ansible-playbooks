@@ -2,61 +2,21 @@ all:
   children:
 
     nats:
-      children:
-
-        dc-1:
-          hosts:
-            nats-01:
-              ansible_host: 192.168.56.101
-              nats_client_advertise: 192.168.56.101
-              nats_cluster_routes_address: 192.168.56.101
-            nats-02:
-              ansible_host: 192.168.56.102
-              nats_client_advertise: 192.168.56.102
-              nats_cluster_routes_address: 192.168.56.102
-            nats-03:
-              ansible_host: 192.168.56.103
-              nats_client_advertise: 192.168.56.103
-              nats_cluster_routes_address: 192.168.56.103
-          vars:
-            nats_host_group: "dc-1"
-
-        dc-2:
-          hosts:
-            nats-01:
-              ansible_host: 192.168.56.104
-              nats_client_advertise: 192.168.56.104
-              nats_cluster_routes_address: 192.168.56.104
-            nats-02:
-              ansible_host: 192.168.56.105
-              nats_client_advertise: 192.168.56.105
-              nats_cluster_routes_address: 192.168.56.105
-            nats-03:
-              ansible_host: 192.168.56.106
-              nats_client_advertise: 192.168.56.106
-              nats_cluster_routes_address: 192.168.56.106
-          vars:
-            nats_host_group: "dc-2"
+      hosts:
+        nats-server-01:
+          ansible_host: 192.168.56.101
 
     streaming:
       hosts:
         nats-streaming-01:
           ansible_host: 192.168.56.101
-        nats-streaming-02:
-          ansible_host: 192.168.56.102
-        nats-streaming-03:
-          ansible_host: 192.168.56.103
-        nats-streaming-04:
-          ansible_host: 192.168.56.104
-        nats-streaming-05:
-          ansible_host: 192.168.56.105
 
     prometheus:
       hosts:
         prometheus-01:
-          ansible_host: 192.168.56.107
+          ansible_host: 192.168.56.101
 
     grafana:
       hosts:
         grafana-01:
-          ansible_host: 192.168.56.108
+          ansible_host: 192.168.56.101

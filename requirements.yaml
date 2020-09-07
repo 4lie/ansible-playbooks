@@ -42,3 +42,18 @@
   scm: git
   version: v1.1.5
   name: GROG.authorized-key
+
+- src: git@github.com:4lie/ansible-role-nats.git
+  scm: git
+  version: v1.3.1
+  name: nats
+
+- src: git@github.com:4lie/ansible-role-nats-streaming.git
+  scm: git
+  version: v1.0.3
+  name: nats-streaming
+
+- src: git@github.com:4lie/ansible-role-prometheus-nats-exporter.git
+  scm: git
+  version: v1.0.0
+  name: prometheus-nats-exporter
