@@ -3,3 +3,5 @@ box_prometheus_exporters:
     name: node,
     parameters: "--collector.systemd --collector.meminfo_numa --collector.interrupts --collector.logind --collector.tcpstat --collector.processes --no-collector.bcache --no-collector.arp --no-collector.edac --no-collector.infiniband --no-collector.ipvs --no-collector.mdadm --no-collector.nfs --no-collector.nfsd --no-collector.textfile --no-collector.wifi --no-collector.hwmon --no-collector.conntrack --no-collector.timex --no-collector.zfs"
   }
+
+nats_streaming_config_template: "{{ playbook_dir }}/templates/nats-streaming-server.conf.j2"
