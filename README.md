@@ -1,4 +1,4 @@
-# 4lie Ansible Playbooks Examples
+# 4lie Ansible Playbooks Example
 
 ## Introduction
 
