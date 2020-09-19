@@ -1,4 +1,10 @@
-# 4lie Ansible Playbooks
+# 4lie Ansible Playbooks Examples
+
+## Introduction
+
+Charlie Ansible Playbooks example.
+
+## Installation
 
 For running this Ansible on Mac OS at first you should install `gnu-tar` using below command:
 
@@ -9,9 +15,9 @@ brew install gnu-tar
 After install `gnu-tar`, you should run this Ansible using below commands:
 
 ```
-ansible-galaxy install -r requirements.yaml
-
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-ansible-playbook main.yaml
+ansible-galaxy install -r requirements.yaml
+
+ansible-playbook main.yaml --tags all
 ```

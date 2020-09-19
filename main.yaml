@@ -33,28 +33,28 @@
   become: true
   roles:
     - role: prometheus
-      tags: ["prometheus"]
+      tags: ['prometheus', 'all']
 
 - name: Configuring Grafana
   hosts: grafana
   become: true
   roles:
     - role: grafana
-      tags: ["grafana"]
+      tags: ['grafana', 'all']
 
 - name: Configuring NATS Servers
   hosts: nats
   become: true
   roles:
     - role: nats
-      tags: ['nats']
+      tags: ['nats', 'all']
 
 - name: Configuring NATS Streaming Servers
   hosts: streaming
   become: true
   roles:
     - role: nats-streaming
-      tags: ['nats-streaming']
+      tags: ['nats-streaming', 'all']
 
     - role: prometheus-nats-exporter
-      tags: ['nats-streaming', 'prometheus-nats-exporter']
+      tags: ['nats-streaming', 'prometheus-nats-exporter', 'all']
